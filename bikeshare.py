@@ -16,14 +16,19 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
+
+    #declare lists(cities, months, days) and variables (city, month, day)
     cities, months, days, city, month, day = [], ['all'], ['all'], '', '', ''
 
+    #get city from CITY_DATA dict
     for key, value in CITY_DATA.items():
         cities.append(key)
 
+    #user calendar to populate month names
     for i in range(1, 7):
         months.append(calendar.month_name[i].lower())
 
+    #user calendar to populate day names
     for day in calendar.day_name:
         days.append(day.lower())
 
